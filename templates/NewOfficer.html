@@ -1,0 +1,276 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>E-Petition</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="../static/assets/img/favicon.png" rel="icon">
+  <link href="../static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="../static/assets/css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="#" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="../static/assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">E-Petition</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+         {% include 'Menu/Home.html'  %}
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title accent-background">
+      <div class="container position-relative">
+        <h1>Home</h1>
+
+        <nav class="breadcrumbs">
+          <ol>
+
+
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <script>
+      var messages = {{ messages | safe }};
+      for (var i=0; i<messages.length; i++) {
+        alert(messages[i]);
+      }
+    </script>
+  {% endif %}
+{% endwith %}
+    <!-- Starter Section Section -->
+    <section id="starter-section" class="starter-section section">
+
+       <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>New Officer Register Here..!</h2>
+
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4  justify-content-center ">
+
+
+          <div class="col-lg-6">
+            <form action="/newofficer" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <input type="text" name="uname" class="form-control" placeholder="Your Name" required="">
+                </div>
+                 <div class="col-md-6 ">
+                  <input type="text" class="form-control" name="mobile" placeholder=" Mobile" required pattern="[0-9]{10}">
+                </div>
+
+                <div class="col-md-6 ">
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                </div>
+
+                 <div class="col-md-6 ">
+
+                  <select name="depart" id="depart" style="width:100%" >
+        <option value="" disabled selected>Select Department</option>
+						  <option value="Transportation and Traffic">Transportation and Traffic</option>
+                      		  <option value="Public Health Related">Public Health Related</option>
+
+						  <option value="Municipality ">Municipality</option>
+                      <option value="Urban Development ">Urban Development</option>
+                       <option value="Public Work Department ">Public Work Department</option>
+      </select>
+                </div>
+
+                <div class="col-12">
+                  <textarea class="form-control" name="address" rows="6" placeholder="Address" required=""></textarea>
+                </div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Searchable District Dropdown</title>
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    .select2-container {
+      width: 100% !important;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="dist">Select District:</label>
+  <select name="dist" id="dist" style="width:100%">
+    <option value="" disabled selected>--Select District--</option>
+    <option value="Ariyalur">Ariyalur</option>
+    <option value="Chengalpattu">Chengalpattu</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Coimbatore">Coimbatore</option>
+    <option value="Cuddalore">Cuddalore</option>
+    <option value="Dharmapuri">Dharmapuri</option>
+    <option value="Dindigul">Dindigul</option>
+    <option value="Erode">Erode</option>
+    <option value="Kallakurichi">Kallakurichi</option>
+    <option value="Kanchipuram">Kanchipuram</option>
+    <option value="Kanyakumari">Kanyakumari</option>
+    <option value="Karur">Karur</option>
+    <option value="Krishnagiri">Krishnagiri</option>
+    <option value="Madurai">Madurai</option>
+    <option value="Mayiladuthurai">Mayiladuthurai</option>
+    <option value="Nagapattinam">Nagapattinam</option>
+    <option value="Namakkal">Namakkal</option>
+    <option value="Nilgiris">Nilgiris</option>
+    <option value="Perambalur">Perambalur</option>
+    <option value="Pudukkottai">Pudukkottai</option>
+    <option value="Ramanathapuram">Ramanathapuram</option>
+    <option value="Ranipet">Ranipet</option>
+    <option value="Salem">Salem</option>
+    <option value="Sivaganga">Sivaganga</option>
+    <option value="Tenkasi">Tenkasi</option>
+    <option value="Thanjavur">Thanjavur</option>
+    <option value="Theni">Theni</option>
+    <option value="Thiruvallur">Thiruvallur</option>
+    <option value="Thiruvarur">Thiruvarur</option>
+    <option value="Thoothukudi">Thoothukudi</option>
+    <option value="Tiruchirappalli">Tiruchirappalli</option>
+    <option value="Tirunelveli">Tirunelveli</option>
+    <option value="Tirupathur">Tirupathur</option>
+    <option value="Tiruppur">Tiruppur</option>
+    <option value="Tiruvannamalai">Tiruvannamalai</option>
+    <option value="Vellore">Vellore</option>
+    <option value="Viluppuram">Viluppuram</option>
+    <option value="Virudhunagar">Virudhunagar</option>
+  </select>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#dist').select2({
+        placeholder: "--Select District--",
+        allowClear: true
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+                 <div class="col-md-6">
+                  <input type="text" name="username" class="form-control" placeholder="Username " required="">
+                </div>
+                 <div class="col-md-6">
+                  <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                </div>
+
+
+
+                <div class="col-12 text-center">
+                  <button type="submit">Submit</button>
+                   <button type="reset">Reset</button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section>
+
+    </section><!-- /Starter Section Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Student</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="#">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="../static/assets/vendor/aos/aos.js"></script>
+  <script src="../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>
